@@ -12,6 +12,7 @@
 		AF5CCA6A22F5128F000DDA2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5CCA6822F5128F000DDA2D /* Main.storyboard */; };
 		AF5CCA6C22F51291000DDA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5CCA6B22F51291000DDA2D /* Assets.xcassets */; };
 		AF5CCA6F22F51291000DDA2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5CCA6D22F51291000DDA2D /* LaunchScreen.storyboard */; };
+		AF5CCA7722F515DA000DDA2D /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CCA7622F515DA000DDA2D /* ScoreTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		AF5CCA6B22F51291000DDA2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF5CCA6E22F51291000DDA2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF5CCA7022F51291000DDA2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF5CCA7622F515DA000DDA2D /* ScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				AF5CCA6422F5128F000DDA2D /* AppDelegate.swift */,
 				AF5CCA6622F5128F000DDA2D /* ViewController.swift */,
 				AF5CCA6822F5128F000DDA2D /* Main.storyboard */,
+				AF5CCA7622F515DA000DDA2D /* ScoreTableViewController.swift */,
 				AF5CCA6B22F51291000DDA2D /* Assets.xcassets */,
 				AF5CCA6D22F51291000DDA2D /* LaunchScreen.storyboard */,
 				AF5CCA7022F51291000DDA2D /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				AF5CCA6722F5128F000DDA2D /* ViewController.swift in Sources */,
 				AF5CCA6522F5128F000DDA2D /* AppDelegate.swift in Sources */,
+				AF5CCA7722F515DA000DDA2D /* ScoreTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
