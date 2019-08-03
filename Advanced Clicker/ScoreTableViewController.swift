@@ -10,7 +10,7 @@ import UIKit
 
 class ScoreTableViewController: UITableViewController {
     
-    var scores = [1.0, 2.0, 3.0]
+    var scores: [Double] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,12 @@ class ScoreTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToScores(segue: UIStoryboardSegue) {
-        
+        if segue.identifier == "unwindToScores", let source = segue.source as? ViewController {
+            let score = source.time
+            let scoreAsDouble = Double(round(score * 10)) / 10  // 5.499 * 10 = 54.99 => 55 => 54.0/10 => 5.4
+            scores.append(scoreAsDouble)
+            tableView.reloadData()
+        }
     }
     
 
