@@ -16,13 +16,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
+            self.time += 0.1
+        }
     }
     
-    @objc func update() {
-        time += 0.1
-    }
-
     @IBAction func tapped(_ sender: Any) {
         counter += 1
         label.text = "\(counter)"
