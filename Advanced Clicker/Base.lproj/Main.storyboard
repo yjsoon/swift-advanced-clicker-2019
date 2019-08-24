@@ -79,11 +79,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQa-5F-RTP">
+                                <rect key="frame" x="118" y="269" width="178" height="358.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="J9t-7R-hQT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6fQ-RC-pXj"/>
+                            <constraint firstItem="HQa-5F-RTP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="c1j-31-OoA"/>
+                            <constraint firstItem="HQa-5F-RTP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sVk-Gk-HJJ"/>
                             <constraint firstItem="J9t-7R-hQT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sr2-hB-5br"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -92,7 +100,8 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="label" destination="J9t-7R-hQT" id="bbF-kz-tUD"/>
+                        <outlet property="countdownLabel" destination="HQa-5F-RTP" id="3Td-Pv-kDd"/>
+                        <outlet property="counterLabel" destination="J9t-7R-hQT" id="Ft7-vq-bJm"/>
                         <segue destination="Ysz-2m-YFU" kind="unwind" identifier="unwindToScores" unwindAction="unwindToScoresWithSegue:" id="cgs-tZ-rP2"/>
                     </connections>
                 </viewController>
