@@ -15,20 +15,20 @@ class ViewController: UIViewController {
     var counter = 0
     var time = 0.0
     
+    let countdownTime = 2.0
+    let countdownScale: CGFloat = 0.1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         counterLabel.isHidden = true
         view.backgroundColor = .red
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
-            self.time += 0.1
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 1.0, animations: {
-            self.countdownLabel.transform = self.countdownLabel.transform.scaledBy(x: 0.1, y: 0.1)
+        UIView.animate(withDuration: self.countdownTime, animations: {
+            self.countdownLabel.transform = self.countdownLabel.transform.scaledBy(x: self.countdownScale, y: self.countdownScale)
             self.countdownLabel.alpha = 0
             self.view.backgroundColor = .orange
         }) { (_) in
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
             self.countdownLabel.alpha = 1
             
             // next animation
-            UIView.animate(withDuration: 1.0, animations: {
-                self.countdownLabel.transform = self.countdownLabel.transform.scaledBy(x: 0.1, y: 0.1)
+            UIView.animate(withDuration: self.countdownTime, animations: {
+                self.countdownLabel.transform = self.countdownLabel.transform.scaledBy(x: self.countdownScale, y: self.countdownScale)
                 self.countdownLabel.alpha = 0
                 self.view.backgroundColor = .yellow
 
@@ -50,8 +50,8 @@ class ViewController: UIViewController {
                 self.countdownLabel.alpha = 1
                 
                 // next animation
-                UIView.animate(withDuration: 1.0, animations: {
-                    self.countdownLabel.transform = self.countdownLabel.transform.scaledBy(x: 0.1, y: 0.1)
+                UIView.animate(withDuration: self.countdownTime, animations: {
+                    self.countdownLabel.transform = self.countdownLabel.transform.scaledBy(x: self.countdownScale, y: self.countdownScale)
                     self.countdownLabel.alpha = 0
                     self.view.backgroundColor = .green
                     
@@ -62,20 +62,20 @@ class ViewController: UIViewController {
                     self.countdownLabel.alpha = 1
                     
                     // next animation
-                    UIView.animate(withDuration: 1.0, animations: {
+                    UIView.animate(withDuration: self.countdownTime, animations: {
                         self.countdownLabel.transform = self.countdownLabel.transform.scaledBy(x: 2.0, y: 2.0)
                         self.countdownLabel.alpha = 0
                         self.view.backgroundColor = .white
                         
                     }) { (_) in
                         // not animated!!
-                        
+                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
+                            self.time += 0.1
+                        }
+                        self.counterLabel.isHidden = false
+
                     }
-
-                    
                 }
-
-
             }
         }
     }
@@ -86,7 +86,12 @@ class ViewController: UIViewController {
         if counter == 30 {
             print("Done")
             print("Time taken: \(time)")
-            performSegue(withIdentifier: "unwindToScores", sender: self)
+            UIView.animate(withDuration: self.countdownTime, animations: {
+                self.view.backgroundColor = .red
+            }) { (_) in
+                self.time -= self.countdownTime
+                self.performSegue(withIdentifier: "unwindToScores", sender: self)
+            }
         }
     }
     
